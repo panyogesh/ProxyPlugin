@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message PFCPAssociationMessage{
+    float value = 1;
+}
+
+service N4ProxyPlugin {
+    rpc SquareRoot(PFCPAssociationMessage) returns (PFCPAssociationMessage) {}
+}

@@ -1,30 +1,21 @@
-# Basic gRPC in Python
+# UDP to GRPC conversion
 
-Contains a minimal working example for rolling gRPC in Python.
-
-For more details, read the accompanying [blog post](https://engineering.semantics3.com/6c4e25f0c506).
+Contains a minimal working example for converting UDP message to GRPC messages
 
 ## Quickstart
 
 ```shell
-git clone https://github.com/ramananbalakrishnan/basic-grpc-python
-cd basic-grpc-python
+git clone https://github.com/panyogesh/ProxyPlugin.git
+cd ProxyPlugin
 pip install -r requirements.txt
 python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. n4_proxy_message.proto
-python server.py
-python client.py
-```
+./udp_client.py (25)--> n4_proxy_plugin.py (25) -> n4_proxy_server.py
+                    <-5                         <- 5
+```                                             
 
 ## File reference
 ```
-basic-grpc-python/
-├── calculator.py          # module containing a function
-|
-├── calculator.proto       # protobuf definition file
-|
-├── calculator_pb2_grpc.py # generated class for server/client
-├── calculator_pb2.py      # generated class for message
-|
-├── server.py              # a server to expose the function
-└── client.py              # a sample client
+udp_client.py      : Sending float value to calculate floating point number
+n4_proxy_plugin.py : Reading from UDP socket and sending over to GRPC
+n4_proxy_server.py : Actual server which will do Square root calculation 
 ```
