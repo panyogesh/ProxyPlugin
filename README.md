@@ -10,7 +10,7 @@ cd ProxyPlugin
 pip install -r requirements.txt
 python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. n4_proxy_message.proto
 ./udp_client.py (25)--> n4_proxy_plugin.py (25) -> n4_proxy_server.py
-                    <-5                         <- 5
+                    <-5 (Response sqrt(25))     <- 5 (Response sqrt(25))
 ```                                             
 
 ## File reference
