@@ -1,21 +1,16 @@
-# UDP to GRPC conversion
+# Protobuf and GRPC examples 
 
-Contains a minimal working example for converting UDP message to GRPC messages
+## Motivation
+* Putting all the good references of proto & grpc examples in one location.
+* Providing quick reference to new comers.
+* Myself a new veteran.
 
-## Quickstart
+## PYTHON_PROTO_GRPC
+* Contains sample programs for proto & grpc message using python
+* Contains a minimal working example for converting UDP message to GRPC messages
+* Program simply takes message from UDP Client(udp_client.py), Converts to (n4_proxy_plugin.py)
+  to proto message and sends to grpc server (n4_proxy_server.py)
 
-```shell
-git clone https://github.com/panyogesh/ProxyPlugin.git
-cd ProxyPlugin
-pip install -r requirements.txt
-python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. n4_proxy_message.proto
-./udp_client.py (25)--> n4_proxy_plugin.py (25) -> n4_proxy_server.py
-                    <-5 (Response sqrt(25))     <- 5 (Response sqrt(25))
-```                                             
-
-## File reference
-```
-udp_client.py      : Sending float value to calculate floating point number
-n4_proxy_plugin.py : Reading from UDP socket and sending over to GRPC
-n4_proxy_server.py : Actual server which will do Square root calculation 
-```
+## GO_PROTO_GRPC
+* Contains sample program for proto & grpc message using go language.
+* Example shows heirarichal messaing encoding/decoding 

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+package go_package.protos;
+option go_package = "go_package/protos";
+
+import "models/ambr.proto";
+
+message Void {
+
+}
+
+// --------------------------------------------------------------------------
+// User subscription record. This record is serialized and stored in the DB.
+// --------------------------------------------------------------------------
+message PMNSubscriberData {
+   Ambr subscriberUeAmr = 1;
+}
+
+service PMNSubscriberService {
+    rpc PMNSubscriberConfig (PMNSubscriberData ) returns (Void) {}
+}
+

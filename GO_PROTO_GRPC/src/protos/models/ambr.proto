@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package go_package.protos;
+
+option go_package = "go_package/protos/models";
+
+message Ambr {
+
+  string uplink = 301729516;
+
+  string downlink = 354071454;
+}
+
