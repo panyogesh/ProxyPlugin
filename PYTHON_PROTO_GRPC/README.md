@@ -6,7 +6,7 @@ Contains a minimal working example for converting UDP message to GRPC messages
 
 ```shell
 git clone https://github.com/panyogesh/ProxyPlugin.git
-cd ProxyPlugin
+cd ProxyPlugin/PYTHON_PROTO_GRPC
 pip install -r requirements.txt
 python3.6 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. n4_proxy_message.proto
 ./udp_client.py (25)--> n4_proxy_plugin.py (25) -> n4_proxy_server.py
